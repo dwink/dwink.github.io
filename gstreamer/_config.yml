@@ -1,0 +1,11 @@
+# Site settings
+title: How I Learned To Stop Worrying And Love GStreamer
+email: dave@dwink.net
+description: "GStreamer is pretty rad, but there are far too few places to get good examples of using GStreamer with Python and GObject-Introspection -- the New New Thing -- so here I am."
+baseurl: ""
+url: "http://dwink.github.io/gstreamer"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+#highlighter: pygments
