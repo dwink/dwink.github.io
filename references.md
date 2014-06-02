@@ -12,7 +12,9 @@ These documents, websites, blog posts, and projects have all been invaluable in 
 * [Python][python]
 * [GNOME][gnome]
 
-### Tutorials
+### References
+
+* [PyGI-Docs][pgi-docs]
 
 ### Miscellaneous
 
@@ -22,3 +24,4 @@ These documents, websites, blog posts, and projects have all been invaluable in 
 [python]: http://www.python.org
 [gnome]: http://www.gnome.org
 [novacut]: https://wiki.ubuntu.com/Novacut/GStreamer1.0
+[pgi-docs]: http://lazka.github.io/pgi-docs/
