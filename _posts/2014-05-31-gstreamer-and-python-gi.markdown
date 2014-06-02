@@ -8,7 +8,7 @@ categories: gstreamer python
 Let's take a brief look at how to get a Python-gi-based GStreamer program working. Here's the basic template:
 
 {% highlight python %}
-{% include love-gstreamer/example_1.py %}
+{% include gst-examples/example_1.py %}
 {% endhighlight %}
 
 You can run this puppy by saving it to a file and running:
