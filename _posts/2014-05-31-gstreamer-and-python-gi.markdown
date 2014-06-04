@@ -7,7 +7,7 @@ categories: gstreamer python
 
 Let's take a brief look at how to get a Python-gi-based GStreamer program working. Here's the basic template:
 
-{% highlight python %}
+{% highlight python3 %}
 {% include gst-examples/example_1.py %}
 {% endhighlight %}
 
@@ -39,7 +39,19 @@ Next, we're initalizing the GStreamer libraries.
 
 Once we get inside `main()`, we're printing out the version of the GStreamer libraries that we're working with.
 
+{% highlight python3 %}
+print("Using Gst: {}.{}.{}.{}".format(*Gst.version()))
+{% endhighlight %}
+
 Finally, we're taking a look at the Registry, which is where GStreamer keeps track of all of the various plugins that provide functionality in the system. If you have need of a particular minimum version of a certain plugin, then you can use the Registry to make sure that your users have that version installed.
+
+{% highlight python3 %}
+registry = Gst.Registry.get()
+plugins = registry.get_plugin_list()
+
+for plugin in plugins:
+    print("{}: {}".format(plugin.get_name(), plugin.get_version()))
+{% endhighlight %}
 
 [gstreamer]: http://gstreamer.freedesktop.org
 [python]: http://www.python.org
