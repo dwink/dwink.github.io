@@ -1,46 +1,48 @@
----
-layout: default
----
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Committed by dwink</title>
 
-<div class="home">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Committed</h1>
+        <p class="header">...the story of things I&#39;ve put in version control</p>
 
-	<div class="post">
-		<header class="post-header">
-			<h1>Welcome!</h1>
-		</header>
-		<article class="post-content">
-			<p>Weary traveler, in search of some concrete examples of how to use GStreamer with Python3 and GObject-Introspection, search no further! In using the lovely GStreamer framework for a project at work, I, too, sought expert advice on these topics, only to find that the examples I could find were for legacy versions of Python or the old 0.10 series of GStreamer releases!</p>
-			<p>I learn best by doing, so as I figured out the framework and how to use it with Python, I decided that my example code might be helpful for the larger community. So here it is, for your enjoyment.</p>
-			<p><em>One note:</em> I'm not really an expert on GStreamer (yet), so while I've tested these with the 1.x GStreamer releases I've been using, there's no guarantees or warranties or any other -ies. Just some code to help you find the logic in the system and build your own expertise.</p>
-			<p>You can grab all of the examples via the <a href="https://github.com/dwink/gst-examples">git repo</a>:</p>
-{% highlight bash %}
-$ git clone https://github.com/dwink/gst-examples.git
-{% endhighlight %}	
-		</article>
-	</div>
-  <ul class="posts">
-    {% for post in paginator.posts reversed %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-		<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
 
-  <div class="pagination">
-	  {% if paginator.previous_page %}
-		      <a href="/page{{ paginator.previous_page }}" class="previous">Previous</a>
-	    {% else %}
-		      <span class="previous">Previous</span>
-	    {% endif %}
-	    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-	    {% if paginator.next_page %}
-		      <a href="/page{{ paginator.next_page }}" class="next">Next</a>
-	    {% else %}
-		      <span class="next ">Next</span>
-	    {% endif %}
-	</div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+        <ul>
+          <li><a class="buttons github" href="https://github.com/dwink">GitHub Profile</a></li>
+        </ul>
 
-</div>
+      </header>
+      <section>
+        <h3>
+<a name="welcome-to-committed" class="anchor" href="#welcome-to-committed"><span class="octicon octicon-link"></span></a>Welcome to Committed.</h3>
+
+<p>I've been working with Linux and other open-source / Free software since 1997. I've built a career around navigating and advising about these software projects, and yet I have always been somewhat...shy...about making these experiences public. Thus, my various employers have benefited from the experience, but I have not been giving back nearly as much to the community as I have gained from it.</p>
+
+<p>That needs to change.</p>
+
+<p>As an engineering-minded individual, solving problems is basically my <em>thing</em>, man, so what better way to solve this problem than by setting up a space to share my experiences?</p>
+
+<p>And here we are. My first steps on this journey center around <a href="http://gstreamer.freedesktop.org">GStreamer</a> and <a href="http://python.org">Python</a>. <a href="http://dwink.github.io/gst-examples">Head over</a> and take a look at the work in progress.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
