@@ -40,7 +40,7 @@ links:
   - title: Posts
     url: /posts/
   - title: GStreamer
-    url: /gstreamer/
+    url: /gst-examples/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Chicago
