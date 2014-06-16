@@ -2,7 +2,7 @@ title:            Committed.
 description:      ...a story of things I've put in version control
 # Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://dwink.github.io
-disqus_shortname: committed-code
+disqus_shortname: committedcode
 
 # Owner/author information
 owner:
