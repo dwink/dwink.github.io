@@ -1,7 +1,7 @@
 ---
 layout: home
-excerpt: "A minimal Jekyll theme for your blog by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+excerpt: "Taking over the world, one SHA-hashed changeset at a time."
+tags: [blog, programming, technology]
 image:
   feature: committed-title.jpg
   credit: NASA/JPL-Caltech/UCLA
