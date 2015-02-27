@@ -1,4 +1,5 @@
 title:            Committed.
+locale:           en_US
 description:      ...a story of things I've put in version control
 # Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://dwink.github.io
@@ -26,12 +27,7 @@ owner:
   # For Google Authorship https://plus.google.com/authorship
   google_plus:
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
-
+# Site wide configuration
 # Links to include in top navigation
 # For external links add external: true
 links:
@@ -48,8 +44,16 @@ future:      true
 highlighter: pygments
 markdown:    kramdown
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
+# Jekyll configuration
+
 permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
 
 kramdown:
   auto_ids: true
@@ -57,13 +61,6 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   use_coderay: false
-
-  coderay:
-    coderay_line_numbers:
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
