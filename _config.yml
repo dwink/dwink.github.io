@@ -2,7 +2,7 @@ title:            Committed.
 locale:           en_US
 description:      ...a story of things I've put in version control
 # Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://dwink.github.io
+#url:              http://dwink.github.io
 disqus_shortname: committedcode
 
 # Owner/author information
@@ -26,17 +26,6 @@ owner:
   dribbble:
   # For Google Authorship https://plus.google.com/authorship
   google_plus:
-
-# Site wide configuration
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: About
-    url: /about/
-  - title: Posts
-    url: /posts/
-  - title: GStreamer
-    url: /gst-examples/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Chicago
