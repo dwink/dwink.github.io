@@ -10,7 +10,7 @@ owner:
   avatar:         http://www.gravatar.com/avatar/f9652452815573245b3f22eed401133d.png
   bio:            "There are few things in life more satisfying than solving a great problem."
   email:          dave@harks.us
-  disqus_shortname: committedcode
+  disqus-shortname: committedcode
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter:
   facebook:
