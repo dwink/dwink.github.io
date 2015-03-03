@@ -2,6 +2,7 @@
 layout: post
 title: "Old Technology"
 date: "2015-02-25 17:42:26 -0600"
+comments: true
 ---
 
 I'm typing this on a Das Keyboard connected to a new 6-core Intel Core i7-based computer that I built in the last few weeks. But I'm typing it into a PuTTY window that's connected via SSH to a PowerPC-based Mac Mini from 2005 -- 10 years old.
