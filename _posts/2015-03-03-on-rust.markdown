@@ -1,0 +1,49 @@
+---
+layout: post
+title: "On Rust"
+excerpt:
+date: "2015-03-03 07:33:31 -0600"
+modified: 
+tags: [rust]
+image: 
+  feature: 
+comments: true
+---
+Lately I've been playing around with [Rust](http://rust-lang.org "Rust"), and there are some fantastic things to love about it: it's fast, forces you to think through safety risks up front, and provides some of the best features of functional languages (pattern matching! Closures! Expression-oriented syntax!). Since the best way to learn a language is to use it, I decided to write a simple program to summarize what CPU is in my system via reading `/proc/cpuinfo`.
+
+#### Features
+
+* Read `/proc/cpuinfo` and parse its format
+* Summarize the following fields:
+	* Vendor
+	* Model Name
+	* \# of physical cores
+	* \# of virtual cores ("threads")
+	* MHz
+* Output the results in a nice, compact format.
+* Use idiomatic Rust and the Rust Standard Library
+* Use the daily builds of Rust -- track the compiler
+ 
+#### try! (and facepalm)
+Of course, I picked a time when the language is settling down but not 100% stable to jump in to learning it, so the first thing that happened is I let myself get confused by writing the following code in main:
+{% highlight rust %}
+let f = try!(File::open("/proc/cpuinfo"));
+{% endhighlight %}
+...which didn't compile. I thought this maybe had to do with recent changes in the standard library (which, in hindsight, was silly -- of *course* Rustaceans wouldn't miss something this simple!), so I spent some time bisecting what the expectations were of code in `std::old_io` vs `std::io`, but they were so very similar that it just didn't make sense.
+
+Thankfully, I found [Rust by Example](http://rustbyexample.com "Rust By Example"), which gives runnable examples of all the major features of Rust. Fantastic stuff! There, I saw that using `match {}` was the way to manage possible failures when opening a file:
+{% highlight rust %}
+    let mut cpuinfo = match File::open(path) {
+        Ok(f) => f,
+        Err(e) => panic!("{}", e)
+    };
+{% endhighlight %}
+Fair enough, the return type is `ioResult<T>`, so you have to destructure it. But it was bugging me that you'd have a `try!` macro that supposedly does that destructuring yet doesn't compile.
+
+I finally came back to reading the documentation on `try!` [here](http://doc.rust-lang.org/std/old_io/#try! "Try"). Aha! See, my C++/Python/Java roots bit me; I assumed that try! was similar to a `try..catch` expression, but no -- it's really intended to make handling a *series* of operations more elegant -- you still ultimately use a `match` to destructure the `Result<>`. With `try!`, you can group together multiple operations that could return an error into a function that returns the `Result` of the entire *group*; if any of the steps returns `Err`, you early-return and end up in the error branch.
+
+So -- no exceptions, but with a way to group a series of operations and handle failures gracefully. I dig. Certainly avoids the pitfalls of the entire program being a gigantic `try..catch` with a single, generic exception handler!
+
+*Assumption is the mother of all mistakes.* -- Mr. Eugene Lewis Fordsworthe
+
+Next time, I'll actually *do* something with this file I've managed to properly open.
