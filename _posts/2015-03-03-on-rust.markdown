@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "On Rust"
-excerpt:
+excerpt: Adventures in learning Rust, and how I assumed my way into confusion.
 date: "2015-03-03 07:33:31 -0600"
-modified: 
+modified: "2015-03-05 06:23:37 -0600" 
 tags: [rust]
 image: 
   feature: 
