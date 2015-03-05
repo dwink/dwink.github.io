@@ -30,7 +30,7 @@ Of course, I picked a time when the language is settling down but not 100% stabl
 let f = try!(File::open("/proc/cpuinfo"));
 {% endhighlight %}
 ...which didn't compile. It said:
-{% highlight %}
+
 	<std macros>:5:8: 6:51 error: mismatched types:
 	 expected `()`,
 		found `core::result::Result<_, _>`
@@ -41,7 +41,7 @@ let f = try!(File::open("/proc/cpuinfo"));
 	<std macros>:1:1: 6:57 note: in expansion of try!
 	src/main.rs:14:13: 14:47 note: expansion site
 	error: aborting due to previous error
-{% endhighlight %}
+
 I thought this maybe had to do with recent changes in the standard library (which, in hindsight, was silly -- of *course* Rustaceans wouldn't miss something this simple!), so I spent some time bisecting what the expectations were of code in `std::old_io` vs `std::io`, but they were so very similar that it just didn't make sense.
 
 Thankfully, I found [Rust by Example](http://rustbyexample.com "Rust By Example"), which gives runnable examples of all the major features of Rust. Fantastic stuff! There, I saw that using `match {}` was the way to manage possible failures when opening a file:
